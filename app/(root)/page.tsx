@@ -8,10 +8,14 @@ import { redirect } from "next/navigation";
 import { getDocuments } from "@/lib/actions/room.actions";
 import Link from "next/link";
 import { dateConverter } from "@/lib/utils";
+import * as Sentry from "@sentry/nextjs";
 
 const Home = async () => {
   const clerkUser = await currentUser();
-  if (!clerkUser) redirect("/sign-in");
+
+  if (!clerkUser) {
+    redirect("/sign-in");
+  }
 
   const roomDocuments = await getDocuments(
     clerkUser.emailAddresses[0].emailAddress
