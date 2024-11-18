@@ -7,7 +7,7 @@ import { useEffect } from "react";
 export default function GlobalError({
   error,
 }: {
-  error: Readonly<Error> & { readonly digest?: string };
+  readonly error: Error & { readonly digest?: string };
 }) {
   useEffect(() => {
     Sentry.captureException(error);
