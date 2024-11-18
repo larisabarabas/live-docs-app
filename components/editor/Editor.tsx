@@ -32,14 +32,12 @@ import DeleteModal from "../DeleteModal";
 function Placeholder() {
   return <div className="editor-placeholder">Enter some rich text...</div>;
 }
+interface EditorProps {
+  readonly roomId: string;
+  readonly currentUserType: UserType;
+}
 
-export function Editor({
-  roomId,
-  currentUserType,
-}: {
-  roomId: string;
-  currentUserType: UserType;
-}) {
+export function Editor({ roomId, currentUserType }: EditorProps) {
   const status = useEditorStatus();
   const { threads } = useThreads();
 
