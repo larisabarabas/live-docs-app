@@ -14,7 +14,7 @@ const Collaborator = ({
   email,
   user,
 }: CollaboratorProps) => {
-  const [userType, setUserType] = useState(collaborator.userType || "viewer");
+  const [userType, setUserType] = useState(collaborator.userType ?? "viewer");
   const [loading, setLoading] = useState(false);
 
   const shareDocumentHandler = async (type: string) => {

@@ -92,9 +92,7 @@ const CollaborativeRoom = ({
                   className="document-title-input"
                 />
               ) : (
-                <>
-                  <p className="document-title">{documentTitle}</p>
-                </>
+                <p className="document-title">{documentTitle}</p>
               )}
 
               {currentUserType === "editor" && !editing && (
